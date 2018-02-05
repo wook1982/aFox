@@ -72,10 +72,10 @@ if(!defined('__AFOX__')) exit();
 				for (var i in options2) {
 					str2 = str2 + options2[i] + '|';
 				}
-				pt2 = new RegExp('([^\-])' + '(' + str2.slice(0, -1) + ')' + '[a-z\-]*\\s*:\\s*[^;]*;', 'ig');
+				pt2 = new RegExp('([^\-]*)' + '(' + str2.slice(0, -1) + ')' + '[a-z\-]*\\s*:\\s*[^;]*;', 'ig');
 			}
 
-			var pattern = RegExp('<([a-zA-Z]+)(\\s[^>]*)>', 'ig');
+			var pattern = RegExp('<([a-zA-Z1-5]+)(\\s[^>]*)>', 'ig');
 			html = html.replace(pattern, function replacer(match, p1, p2, offset, string) {
 				if(pt1) p2 = p2.replace(pt1, '');
 				if(pt2) p2 = p2.replace(pt2, '\\1');
@@ -95,4 +95,4 @@ if(!defined('__AFOX__')) exit();
 </script>
 <?php
 /* End of file index.php */
-/* Location: ./module/editor/components/remove_styles/index.php */
+/* Location: ./module/editor/components/z_remove_styles/index.php */

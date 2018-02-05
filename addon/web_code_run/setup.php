@@ -5,18 +5,18 @@ if(!defined('__AFOX__')) exit();
 <pre>
 &lt;blockquote web-code-run="area"&gt;
 &lt;cite&gt;Code Run&lt;/cite&gt;&lt;hr&gt;
-&lt;pre&gt;CSS:&lt;code web-code-run="css"&gt; 
+&lt;div&gt;CSS:&lt;pre code-type="css"&gt; 
 /* 이 아래로 코드 입력 */
 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;SCRIPT:&lt;code web-code-run="script"&gt; 
-/* 이 아래로 코드 입력 */
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;HTML:&lt;code web-code-run="html"&gt; 
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div&gt;HTML:&lt;pre code-type="html"&gt; 
 &lt;!--/ 이 아래로 코드 입력 /--&gt; 
 
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div&gt;SCRIPT:&lt;pre code-type="jscript"&gt; 
+/* 이 아래로 코드 입력 */
+
+&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
 &lt;button web-code-run="run"&gt;코드 실행&lt;/button&gt;
 &lt;/blockquote&gt;
 </pre>

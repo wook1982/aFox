@@ -10,4 +10,4 @@ $_COMPONENT_INFO['description'] = "HTML 태그에 붙은 불필요한 스타일�
 $_COMPONENT_INFO['date'] = "2017-10-23";
 
 /* End of file info.php */
-/* Location: ./module/editor/components/remove_styles/info.php */
+/* Location: ./module/editor/components/z_remove_styles/info.php */

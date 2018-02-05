@@ -17,17 +17,6 @@ pre {
 	border-radius: 4px;
 }
 
-pre code {
-	padding: 5px;
-	font-size: inherit;
-	color: inherit;
-	white-space: pre-wrap;
-	background-color: #fff;
-	display: block;
-	border: 1px solid #ccc;
-	border-radius: 3px;
-}
-
 blockquote {
 	padding: 10px 20px;
 	margin: 0 0 20px;

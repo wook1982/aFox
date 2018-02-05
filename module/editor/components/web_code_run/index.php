@@ -46,9 +46,9 @@ if(!defined('__AFOX__')) exit();
 			var $wc = $wecode.eq(i),
 			$tareas = $('textarea');
 			$('[name="title"]').val($wc.find('cite').eq(0).text().trim() || '');
-			$tareas.eq(0).val($wc.find('[web-code-run="css"]').text().trim());
-			$tareas.eq(1).val($wc.find('[web-code-run="script"]').text().trim());
-			$tareas.eq(2).val($wc.find('[web-code-run="html"]').text().trim());
+			$tareas.eq(0).val($wc.find('[code-type="css"]').text().trim());
+			$tareas.eq(1).val($wc.find('[code-type="jscript"]').text().trim());
+			$tareas.eq(2).val($wc.find('[code-type="html"]').text().trim());
 		}
 		$('.web_code_selector').hide();
 		$('.web_code_editor').attr('data-index', i).show();
@@ -63,9 +63,9 @@ if(!defined('__AFOX__')) exit();
 		if(index > -1) {
 			var $wc = $orihtml.find('[web-code-run="area"]:eq('+index+')');
 			$wc.find('cite').eq(0).text(title ? title : 'Code Run');
-			$wc.find('[web-code-run="css"]').text($tareas.eq(0).val());
-			$wc.find('[web-code-run="script"]').text($tareas.eq(1).val());
-			$wc.find('[web-code-run="html"]').text($tareas.eq(2).val());
+			$wc.find('[code-type="css"]').text($tareas.eq(0).val());
+			$wc.find('[code-type="jscript"]').text($tareas.eq(1).val());
+			$wc.find('[code-type="html"]').text($tareas.eq(2).val());
 			if($iframe.length > 0) {
 				$iframe.contents().find('body').html($orihtml.html());
 			}else {
@@ -74,17 +74,17 @@ if(!defined('__AFOX__')) exit();
 		} else {
 			html = '<blockquote web-code-run="area">' + "\n";
 			html = html + '<cite>%s</cite><hr>' + "\n";
-			html = html + '<pre>CSS:<code web-code-run="css"> %s' + "\n";
-			html = html + '</code></pre>' + "\n";
-			html = html + '<pre>SCRIPT:<code web-code-run="script"> %s' + "\n";
-			html = html + '</code></pre>' + "\n";
-			html = html + '<pre>HTML:<code web-code-run="html"> %s' + "\n";
-			html = html + '</code></pre>' + "\n";
+			html = html + '<div>CSS:<pre code-type="css"> %s' + "\n";
+			html = html + '</pre></div>' + "\n";
+			html = html + '<div>HTML:<pre code-type="html"> %s' + "\n";
+			html = html + '</pre></div>' + "\n";
+			html = html + '<div>SCRIPT:<pre code-type="jscript"> %s' + "\n";
+			html = html + '</pre></div><hr>' + "\n";
 			html = html + '<button web-code-run="run">코드 실행</button>' + "\n";
 			html = html + '</blockquote>' + "\n";
 			$editor.paste(
 				html.sprintf(
-					(title ? title : 'Code Run'),
+					(title ? title.escapeHtml() : 'Code Run'),
 					($tareas.eq(0).val().escapeHtml() || ('/* 이 아래로 코드 입력 */' + "\n" + "\n")),
 					($tareas.eq(1).val().escapeHtml() || ('/* 이 아래로 코드 입력 */' + "\n" + "\n")),
 					($tareas.eq(2).val().escapeHtml() || ('&lt;!--/ 이 아래로 코드 입력 /--&gt;' + "\n" + "\n"))
