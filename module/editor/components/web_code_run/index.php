@@ -21,9 +21,9 @@ if(!defined('__AFOX__')) exit();
 		<input type="text" name="title" value="" style="width:100%">
 		<h5>CSS ▽</h5>
 		<textarea style="width:100%;height:150px"></textarea>
-		<h5>SCRIPT ▽</h5>
-		<textarea style="width:100%;height:150px"></textarea>
 		<h5>HTML ▽</h5>
+		<textarea style="width:100%;height:150px"></textarea>
+		<h5>SCRIPT ▽</h5>
 		<textarea style="width:100%;height:150px"></textarea>
 	</div>
 	<hr style="margin:20px 0 10px">
@@ -47,8 +47,8 @@ if(!defined('__AFOX__')) exit();
 			$tareas = $('textarea');
 			$('[name="title"]').val($wc.find('cite').eq(0).text().trim() || '');
 			$tareas.eq(0).val($wc.find('[code-type="css"]').text().trim());
-			$tareas.eq(1).val($wc.find('[code-type="jscript"]').text().trim());
-			$tareas.eq(2).val($wc.find('[code-type="html"]').text().trim());
+			$tareas.eq(1).val($wc.find('[code-type="html"]').text().trim());
+			$tareas.eq(2).val($wc.find('[code-type="jscript"]').text().trim());
 		}
 		$('.web_code_selector').hide();
 		$('.web_code_editor').attr('data-index', i).show();
@@ -64,8 +64,8 @@ if(!defined('__AFOX__')) exit();
 			var $wc = $orihtml.find('[web-code-run="area"]:eq('+index+')');
 			$wc.find('cite').eq(0).text(title ? title : 'Code Run');
 			$wc.find('[code-type="css"]').text($tareas.eq(0).val());
-			$wc.find('[code-type="jscript"]').text($tareas.eq(1).val());
-			$wc.find('[code-type="html"]').text($tareas.eq(2).val());
+			$wc.find('[code-type="html"]').text($tareas.eq(1).val());
+			$wc.find('[code-type="jscript"]').text($tareas.eq(2).val());
 			if($iframe.length > 0) {
 				$iframe.contents().find('body').html($orihtml.html());
 			}else {
